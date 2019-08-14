@@ -19,7 +19,7 @@ const App = () => (
         <Switch>
           <Route path='/character/:id' component={Profile} />
           <Route path='/battle' component={Battle} />
-          <Route path='/home' component={SuperHeros} />
+          <Route path='/' component={SuperHeros} />
           <Redirect from='/' exact to='/home' />
         </Switch>
       </>
