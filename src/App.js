@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import Navbar from './componets/layout/NavBar/Navbar';
+import SuperHeros from './componets/layout/SuperHeroHome/SuperHeros';
+import Battle from './componets/layout/Battle/Battle';
+import Profile from './componets/layout/Profile/profile';
+import HeroState from './componets/Context/Heros/HeroState';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <HeroState>
+    <Router>
+      <>
+        <Navbar />
+        <Switch>
+          <Route path='/character/:id' component={Profile} />
+          <Route path='/battle' component={Battle} />
+          <Route path='/home' component={SuperHeros} />
+          <Redirect from='/' exact to='/home' />
+        </Switch>
+      </>
+    </Router>
+  </HeroState>
+);
 
 export default App;
