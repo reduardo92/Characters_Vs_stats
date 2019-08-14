@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PlayerStyles = styled.div`
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-top: 35px solid ${props => props.bgColor};
+  border-top: 22px solid ${props => props.bgColor};
   border-radius: 1px;
   background-color: ${props => props.bgColor};
   transition: 0.3s;
@@ -15,13 +15,13 @@ const PlayerStyles = styled.div`
 
   .content {
     display: flex;
-    padding-top: 1em;
+    padding-top: 0.5em;
   }
 
   .player--name {
     text-align: center;
     position: absolute;
-    top: -21px;
+    top: -15px;
     left: 0;
     right: 0;
     width: 100%;
@@ -31,7 +31,11 @@ const PlayerStyles = styled.div`
     background-color: #333;
     color: #fff;
     letter-spacing: 1.1px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .character--img {
+    flex: 1;
   }
 
   .power-stats {
@@ -39,16 +43,21 @@ const PlayerStyles = styled.div`
     background-color: #333;
     border: 0.1px solid #fff;
     width: 71%;
-    padding: 1em;
+    padding: 1em 0.1em;
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .stats {
-    display: flex;
-    justify-content: space-between;
+    flex: 1 1 30%;
   }
 
   .stats--name {
     color: #fff;
+    margin-bottom: 0.5em;
+    font-size: 0.8rem;
 
     &::first-letter {
       font-weight: bold;
@@ -67,12 +76,12 @@ const PlayerStyles = styled.div`
   .far {
     position: absolute;
     z-index: 5;
-    top: -18px;
+    top: -11px;
     right: 0;
     background: none;
     color: red;
     border: none;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     padding: 0.1em;
     transition: opacity 0.3s ease-in-out;
 
@@ -98,7 +107,6 @@ const PlayerStyles = styled.div`
     border-top: 20px solid ${props => props.bgColor};
 
     .content {
-      display: flex;
       padding-top: 1em;
       flex-direction: column;
     }
@@ -106,12 +114,30 @@ const PlayerStyles = styled.div`
     .player--name {
       top: 0px;
       padding: 7px;
+      font-size: 1.5rem;
     }
 
     .power-stats {
       width: 90%;
       margin: 0.6em;
       align-self: center;
+      flex-wrap: wrap;
+      padding: 1em 1.4em;
+    }
+
+    .stats {
+      display: flex;
+      flex: 1 1 100%;
+      justify-content: space-between;
+    }
+
+    .stats--name {
+      margin-bottom: 1em;
+      font-size: 1.15rem;
+
+      &::first-letter {
+        font-size: 1.15rem;
+      }
     }
 
     .far {
